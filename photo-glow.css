@@ -1,0 +1,34 @@
+/* Photo-r pichone red fire glow */
+.person::before,
+.person::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  left:10%; right:10%; bottom:8%; top:8%;
+  border-radius:50% 50% 40% 40%;
+  pointer-events:none;
+}
+/* aguner shikha */
+.person::before{
+  background:radial-gradient(ellipse at 50% 60%,#ff3b1f 0,#e10600 35%,rgba(150,0,0,.55) 55%,transparent 72%);
+  filter:url(#burn) blur(8px);
+  animation:redfire 1.2s ease-in-out infinite alternate;
+}
+/* naram glow */
+.person::after{
+  background:radial-gradient(ellipse,rgba(255,20,20,.55),transparent 70%);
+  filter:blur(30px);
+  animation:redpulse 2.4s ease-in-out infinite alternate;
+}
+/* background chara photo hole dhar e lal glow */
+.person img.cutout{
+  filter:grayscale(1) contrast(1.15) drop-shadow(0 0 8px #ff2a1a) drop-shadow(0 0 26px #c40000);
+}
+@keyframes redfire{
+  from{transform:scale(1,1);opacity:.75}
+  to{transform:scale(1.04,1.09) translateY(-2%);opacity:1}
+}
+@keyframes redpulse{
+  from{opacity:.55}
+  to{opacity:1}
+}
